@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="proyecto_final_movil.ReservationPage"
+             Title="ReservationPage"
+              BackgroundColor="#F7F7F7">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+
+            <Label Text="Reserva tu estancia en Tortuguero"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   TextColor="#2E8B57" />
+
+            <!-- FECHA DE LLEGADA -->
+            <VerticalStackLayout>
+                <Label Text="Fecha de llegada"
+                       FontSize="16"
+                       TextColor="Black" />
+
+                <DatePicker x:Name="dpEntrada"
+                            MinimumDate="{x:Static sys:DateTime.Now}"
+                            TextColor="#2E8B57" />
+            </VerticalStackLayout>
+
+            <!-- FECHA DE SALIDA -->
+            <VerticalStackLayout>
+                <Label Text="Fecha de salida"
+                       FontSize="16"
+                       TextColor="Black" />
+
+                <DatePicker x:Name="dpSalida"
+                            TextColor="#2E8B57" />
+            </VerticalStackLayout>
+
+            <!-- HUESPEDES -->
+            <VerticalStackLayout>
+                <Label Text="Huespedes"
+                       FontSize="16"
+                       TextColor="Black" />
+
+                <Picker x:Name="pkHuespedes"
+                        TextColor="#2E8B57"
+                        TitleColor="Black">
+                    <Picker.Items>
+                        <x:String>1 huesped</x:String>
+                        <x:String>2 huespedes</x:String>
+                        <x:String>3 huespedes</x:String>
+                        <x:String>4 huespedes</x:String>
+                        <x:String>5 o mas</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <!-- TIPO ALOJAMIENTO -->
+            <VerticalStackLayout>
+                <Label Text="Tipo de alojamiento"
+                       FontSize="16"
+                       TextColor="Black" />
+
+                <Picker x:Name="pkTipo"
+                        TextColor="#2E8B57"
+                        TitleColor="Black">
+                    <Picker.Items>
+                        <x:String>Cabana rustica</x:String>
+                        <x:String>Bungalow privado</x:String>
+                        <x:String>Frente al canal</x:String>
+                        <x:String>Habitacion economica</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <Label Text="Opciones disponibles"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#2E8B57"
+                   Margin="0,10,0,0"/>
+
+            <CollectionView x:Name="cvOpciones" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="15"
+                               BorderColor="#CCCCCC"
+                               Padding="10"
+                               Margin="0,5"
+                               HasShadow="True">
+
+                            <Grid ColumnDefinitions="110,*">
+                                <Image Source="{Binding Imagen}"
+                                       HeightRequest="90"
+                                       WidthRequest="110"
+                                       Aspect="AspectFill" />
+
+                                <VerticalStackLayout Grid.Column="1" Padding="10,0" Spacing="4">
+                                    <Label Text="{Binding Nombre}"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#2E8B57"/>
+
+                                    <Label Text="{Binding Ubicacion}"
+                                           TextColor="#2E8B57"
+                                           FontSize="13"/>
+
+                                    <Label Text="{Binding Precio}"
+                                           FontAttributes="Bold"
+                                           TextColor="#2E8B57"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Confirmar Reserva"
+                    x:Name="btnReservar"
+                    BackgroundColor="Transparent"
+                    TextColor="#2E8B57"
+                    CornerRadius="25"
+                    Padding="15"
+                    FontSize="18"
+                    BorderColor="#2E8B57"
+                    BorderWidth="2" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

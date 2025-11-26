@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_final_movil.ToursPage"
+             Title="ToursPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Frame Grid.Row="0" 
+           BackgroundColor="#00695C" 
+           Padding="20"
+           CornerRadius="0"
+           HasShadow="True">
+            <StackLayout>
+                <Label Text="🚤 Tours en Tortuguero" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+                <Label Text="Vive experiencias únicas" 
+                   FontSize="16" 
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   Margin="0,5,0,0"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- Lista de Tours -->
+        <ScrollView Grid.Row="1" Padding="15">
+            <StackLayout Spacing="15">
+
+                <!-- Tour 1: Tour de Canales -->
+                <Frame BackgroundColor="White" 
+                   Padding="15" 
+                   CornerRadius="15"
+                   HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Grid ColumnDefinitions="60,*">
+                            <Frame Grid.Column="0" 
+                               BackgroundColor="#4DB6AC" 
+                               CornerRadius="10"
+                               Padding="0"
+                               HeightRequest="60"
+                               WidthRequest="60">
+                                <Label Text="🛶" 
+                                   FontSize="30" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="Tour de Canales" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold"
+                                   TextColor="#00695C"/>
+                                <Label Text="3 horas • Mañana/Tarde" 
+                                   FontSize="12" 
+                                   TextColor="#999"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="Navega por los canales naturales y observa monos, caimanes, aves tropicales y perezosos en su hábitat natural." 
+                           FontSize="14" 
+                           TextColor="#666"/>
+
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                            <Label Grid.Column="0" 
+                               Text="💰" 
+                               FontSize="20"/>
+                            <Label Grid.Column="1" 
+                               Text="$45 por persona" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#00695C"
+                               VerticalOptions="Center"
+                               Margin="5,0,0,0"/>
+                        </Grid>
+
+                        <Button Text="Reservar Tour"
+                            BackgroundColor="#00897B"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="OnReservarClicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tour 2: Observación de Tortugas -->
+                <Frame BackgroundColor="White" 
+                   Padding="15" 
+                   CornerRadius="15"
+                   HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Grid ColumnDefinitions="60,*">
+                            <Frame Grid.Column="0" 
+                               BackgroundColor="#81C784" 
+                               CornerRadius="10"
+                               Padding="0"
+                               HeightRequest="60"
+                               WidthRequest="60">
+                                <Label Text="🐢" 
+                                   FontSize="30" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="Observación de Tortugas" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold"
+                                   TextColor="#388E3C"/>
+                                <Label Text="2-3 horas • Nocturno" 
+                                   FontSize="12" 
+                                   TextColor="#999"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="Experiencia nocturna única observando tortugas marinas anidando en la playa. Incluye guía certificado." 
+                           FontSize="14" 
+                           TextColor="#666"/>
+
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                            <Label Grid.Column="0" 
+                               Text="💰" 
+                               FontSize="20"/>
+                            <Label Grid.Column="1" 
+                               Text="$35 por persona" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#388E3C"
+                               VerticalOptions="Center"
+                               Margin="5,0,0,0"/>
+                        </Grid>
+
+                        <Button Text="Reservar Tour"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="OnReservarClicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tour 3: Caminata Nocturna -->
+                <Frame BackgroundColor="White" 
+                   Padding="15" 
+                   CornerRadius="15"
+                   HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Grid ColumnDefinitions="60,*">
+                            <Frame Grid.Column="0" 
+                               BackgroundColor="#7986CB" 
+                               CornerRadius="10"
+                               Padding="0"
+                               HeightRequest="60"
+                               WidthRequest="60">
+                                <Label Text="🌙" 
+                                   FontSize="30" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="Caminata Nocturna" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold"
+                                   TextColor="#303F9F"/>
+                                <Label Text="2 horas • Nocturno" 
+                                   FontSize="12" 
+                                   TextColor="#999"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="Explora el bosque de noche con linternas y descubre la fauna nocturna: ranas, insectos y mamíferos." 
+                           FontSize="14" 
+                           TextColor="#666"/>
+
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                            <Label Grid.Column="0" 
+                               Text="💰" 
+                               FontSize="20"/>
+                            <Label Grid.Column="1" 
+                               Text="$30 por persona" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#303F9F"
+                               VerticalOptions="Center"
+                               Margin="5,0,0,0"/>
+                        </Grid>
+
+                        <Button Text="Reservar Tour"
+                            BackgroundColor="#3F51B5"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="OnReservarClicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tour 4: Tour de Pesca -->
+                <Frame BackgroundColor="White" 
+                   Padding="15" 
+                   CornerRadius="15"
+                   HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Grid ColumnDefinitions="60,*">
+                            <Frame Grid.Column="0" 
+                               BackgroundColor="#FFB74D" 
+                               CornerRadius="10"
+                               Padding="0"
+                               HeightRequest="60"
+                               WidthRequest="60">
+                                <Label Text="🎣" 
+                                   FontSize="30" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="Tour de Pesca Deportiva" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold"
+                                   TextColor="#E65100"/>
+                                <Label Text="4 horas • Mañana" 
+                                   FontSize="12" 
+                                   TextColor="#999"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="Pesca deportiva con captura y liberación. Incluye equipo completo, guía experto y refrigerios." 
+                           FontSize="14" 
+                           TextColor="#666"/>
+
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                            <Label Grid.Column="0" 
+                               Text="💰" 
+                               FontSize="20"/>
+                            <Label Grid.Column="1" 
+                               Text="$60 por persona" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#E65100"
+                               VerticalOptions="Center"
+                               Margin="5,0,0,0"/>
+                        </Grid>
+
+                        <Button Text="Reservar Tour"
+                            BackgroundColor="#FF6F00"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="OnReservarClicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tour 5: Caminata al Cerro -->
+                <Frame BackgroundColor="White" 
+                   Padding="15" 
+                   CornerRadius="15"
+                   HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Grid ColumnDefinitions="60,*">
+                            <Frame Grid.Column="0" 
+                               BackgroundColor="#A1887F" 
+                               CornerRadius="10"
+                               Padding="0"
+                               HeightRequest="60"
+                               WidthRequest="60">
+                                <Label Text="🥾" 
+                                   FontSize="30" 
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="10,0,0,0" VerticalOptions="Center">
+                                <Label Text="Caminata al Cerro Tortuguero" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold"
+                                   TextColor="#4E342E"/>
+                                <Label Text="3 horas • Mañana" 
+                                   FontSize="12" 
+                                   TextColor="#999"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Label Text="Sube al punto más alto de la zona y disfruta vistas panorámicas del pueblo, canales y mar Caribe." 
+                           FontSize="14" 
+                           TextColor="#666"/>
+
+                        <Grid ColumnDefinitions="Auto,*" Margin="0,5,0,0">
+                            <Label Grid.Column="0" 
+                               Text="💰" 
+                               FontSize="20"/>
+                            <Label Grid.Column="1" 
+                               Text="$25 por persona" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#4E342E"
+                               VerticalOptions="Center"
+                               Margin="5,0,0,0"/>
+                        </Grid>
+
+                        <Button Text="Reservar Tour"
+                            BackgroundColor="#6D4C41"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            Clicked="OnReservarClicked"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

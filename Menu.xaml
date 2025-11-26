@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto_final_movil.Menu"
+             Title="Menu"
+             BackgroundColor="DarkSeaGreen">
+     <Grid RowDefinitions="*,Auto">
+     <ScrollView Grid.Row="0">
+         <VerticalStackLayout Spacing="30">
+
+             <Grid Padding="10" ColumnDefinitions="Auto,*,Auto">
+                 <Image Source="navv.png" HeightRequest="15" Grid.Column="0"/>
+                 <Label Text="Tortuguero" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1"/>
+             </Grid>
+
+
+             <Frame Padding="0" CornerRadius="25" HorizontalOptions="FillAndExpand" WidthRequest="260" IsClippedToBounds="True">
+                 <Grid>
+                     <Image Source="tortume.jpg" Aspect="AspectFill"/>
+                     <VerticalStackLayout Padding="20" VerticalOptions="End">
+                         <Label Text="Discover Paradise" FontSize="26" FontAttributes="Bold" TextColor="White"/>
+                         <Label Text="Explore Tortuguero." FontSize="15" FontAttributes="Bold" TextColor="White"/>
+                     </VerticalStackLayout>
+                 </Grid>
+             </Frame>
+
+             <Grid RowSpacing="20" Margin="0,0,0,20" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*">
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="0" Grid.Row="0">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="geo.jpg" Aspect="AspectFill"/>
+                     <Label Text="Geography" TextColor="White" FontAttributes="Bold" 
+                HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Geo_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="0" Grid.Row="1">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="eco.jpg" Aspect="AspectFill"/>
+                     <Label Text="Ecology" TextColor="White" FontAttributes="Bold" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Eco_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="1" Grid.Row="0">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="map.jpg" Aspect="AspectFill"/>
+                     <Label Text="Map" TextColor="White" FontAttributes="Bold" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Map_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="1" Grid.Row="1">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="his.jpeg" Aspect="AspectFill"/>
+                     <Label Text="History" TextColor="White" FontAttributes="Bold" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="His_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="0" Grid.Row="2">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="verde.jpg" Aspect="AspectFill"/>
+                     <Label Text="Book Now" TextColor="White" FontAttributes="Bold" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Book_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+                 <Grid HeightRequest="100" WidthRequest="100" Grid.Column="1" Grid.Row="2">
+                     <Grid.Clip>
+                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                     </Grid.Clip>
+                     <Image Source="help.jpg" Aspect="AspectFill"/>
+                     <Label Text="Help" TextColor="White" FontAttributes="Bold" 
+                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                     <Grid.GestureRecognizers>
+                         <TapGestureRecognizer Tapped="Help_tap"/>
+                     </Grid.GestureRecognizers>
+                 </Grid>
+
+             </Grid>
+         </VerticalStackLayout>
+     </ScrollView>
+
+     <Grid Grid.Row="1" BackgroundColor="FloralWhite" HeightRequest="40" ColumnDefinitions="*,*,*,*,*" >
+         <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="3">
+             <Image Source="home.png" HeightRequest="22"/>
+             <Label Text="Home" FontSize="10" TextColor="Black" HorizontalOptions="Center"/>
+         </VerticalStackLayout>
+
+         <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="3">
+             <Image Source="exp.png" HeightRequest="22"/>
+             <Label Text="Explore" FontSize="10" TextColor="Black" HorizontalOptions="Center"/>
+         </VerticalStackLayout>
+
+         <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="3">
+             <Image Source="book.png" HeightRequest="22"/>
+             <Label Text="Book" FontSize="10" TextColor="Black" HorizontalOptions="Center"/>
+         </VerticalStackLayout>
+
+         <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center" Spacing="3">
+             <Image Source="act.png" HeightRequest="22"/>
+             <Label Text="Activities" FontSize="10" TextColor="Black" HorizontalOptions="Center"/>
+             <VerticalStackLayout.GestureRecognizers>
+                 <TapGestureRecognizer Tapped="Activities_tap"/>
+             </VerticalStackLayout.GestureRecognizers>
+         </VerticalStackLayout>
+
+         <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center" Spacing="3">
+             <Image Source="pro.png" HeightRequest="22"/>
+             <Label Text="Profile" FontSize="10" TextColor="Black" HorizontalOptions="Center"/>
+         </VerticalStackLayout>
+
+     </Grid>
+ </Grid>
+</ContentPage>
